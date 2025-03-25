@@ -1,10 +1,10 @@
-import { dbContext } from "../db/DbContext"
+import { dbContext } from "../db/DbContext.js"
 
 class HouseService{
 
 async getAllHouses(){
-    const cars = await dbContext.House.find().populate('creator')
-    return cars
+    const house = await dbContext.House.find().populate('creator')
+    return house
 }
 
 }

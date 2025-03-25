@@ -1,5 +1,5 @@
-import { houseService } from "../services/HouseService";
-import BaseController from "../utils/BaseController";
+import { houseService } from "../services/HouseService.js";
+import BaseController from "../utils/BaseController.js";
 
 export class HouseController extends BaseController{
     constructor(){
@@ -11,9 +11,10 @@ export class HouseController extends BaseController{
     }
 
     async getAllHouses(request,response, next){
+        console.log('Getting all houses...')
         try {
             const house = await houseService.getAllHouses()
-            response.send(house))
+            response.send(house)
         } catch (error) {
             next(error)
         }
